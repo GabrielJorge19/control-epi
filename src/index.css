@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@import "./styles/motion.css";
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    min-height: 100vh;
+    /* Hex explícito: html2canvas (html2pdf) lê getComputedStyle(html/body) e não suporta oklch do Tailwind. */
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+}

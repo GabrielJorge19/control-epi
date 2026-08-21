@@ -178,10 +178,4 @@ Abrir no browser o URL indicado pelo Vite (geralmente `http://localhost:5173`).
 
 ---
 
-## Licença e autor
-
-Projeto privado (`"private": true` no `package.json`). Ajustar esta secção se for publicado com licença explícita.
-
----
-
 *README pensado para claridade técnica, onboarding de devs e leitura por recrutadores ou avaliadores de portfólio.*

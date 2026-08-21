@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import type { EmployeeDocument } from "../types/employee";
-import logo from "../assets/logo-cabecalho.png";
+// import logo from "../assets/logo-cabecalho.png";
 
 
 
@@ -10,11 +10,11 @@ const Template = forwardRef<HTMLDivElement, { employee: EmployeeDocument }>(({ e
     return (
         <div style={styles.page} data-pdf-root ref={ref}>
 
-            <img src={logo} alt="Logo" className="w-100mm" style={{ width: "80mm", marginBottom: "15mm" }} />
+            <div className="w-200mm" style={{ width: "80mm", marginBottom: "15mm" }} />
             <div className="border border-2 border-black w-full text-center">
                 {/* Linha 1 */}
                 <div className="grid grid-cols-[30%_70%]">
-                    <div className="border border-black font-bold text-lg ">CIBAM <br />ENGENHARIA</div>
+                    <div className="border border-black font-bold text-lg ">MRO <br />SERVIÇOS</div>
                     <div className="border border-black p-2">COMPROVANTE DE RECEBIMENTO DE EQUIPAMENTO DE PROTEÇÃO INDIVIDUAL - EPI - LEI 6514 PORT. 3214 NR 06/18 - CLT</div>
                 </div>
                 {/* Linha 2 */}

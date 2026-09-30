@@ -1,7 +1,6 @@
 import { useCallback, useMemo, useRef, useState } from "react";
 import { AlertTriangle, Archive, FileStack, Layers, Loader2, Users } from "lucide-react";
 import { UploadExcel } from "../components/UploadExcel";
-import { DocumentPreview } from "../components/DocumentPreview";
 import { EmployeeCard } from "../components/EmployeeCard";
 import { PdfGenerator, type PdfGeneratorHandle } from "../components/PdfGenerator";
 import { parseExcelBuffer } from "../services/excel.service";
@@ -33,7 +32,6 @@ export function ToolPage() {
   const [errors, setErrors] = useState<string[]>([]);
   const [warnings, setWarnings] = useState<string[]>([]);
   const [parseMeta, setParseMeta] = useState<{ rowCount: number; skipped: number } | null>(null);
-  const [previewEmployee, setPreviewEmployee] = useState<EmployeeDocument | null>(null);
 
   const [reading, setReading] = useState(false);
   const [pdfBusy, setPdfBusy] = useState(false);
@@ -46,7 +44,6 @@ export function ToolPage() {
     async (file: File) => {
       setReading(true);
       setFileName(file.name);
-      setPreviewEmployee(null);
       zipCacheRef.current = null;
       try {
         const buffer = await file.arrayBuffer();
@@ -82,7 +79,6 @@ export function ToolPage() {
 
   const loadMockDemo = useCallback(() => {
     setFileName("demonstracao.xlsx");
-    setPreviewEmployee(null);
     zipCacheRef.current = null;
     setErrors([]);
     setWarnings([]);
@@ -314,13 +310,6 @@ export function ToolPage() {
             ))}
           </div>
         </section>
-      ) : null}
-
-      {previewEmployee ? (
-        <DocumentPreview
-          employee={previewEmployee}
-          onClose={() => setPreviewEmployee(null)}
-        />
       ) : null}
     </div>
   );

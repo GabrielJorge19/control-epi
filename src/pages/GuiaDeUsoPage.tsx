@@ -8,10 +8,10 @@ import {
   FileText,
   HandHelping,
   HelpCircle,
-  Home,
   Laptop,
   Lock,
   MousePointerClick,
+  PenLine,
   Shield,
   Sparkles,
   Upload,
@@ -84,13 +84,33 @@ export function GuiaDeUsoPage() {
             Este sistema ajuda a montar os documentos de entrega de EPI e uniformes a partir de uma lista no Excel.
           </p>
           <div className="mt-8">
-            <NavLink
-              to="/tool"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-slate-800"
-            >
-              <Home className="size-4" aria-hidden />
-              Ir para a página principal
-            </NavLink>
+            <p className="mb-3 text-sm font-medium text-slate-600">Por onde você quer começar?</p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <NavLink
+                to="/tool"
+                className="group rounded-xl border border-slate-200 bg-white/80 px-5 py-4 text-left shadow-sm transition hover:border-slate-300 hover:bg-white"
+              >
+                <span className="flex items-center gap-2 text-sm font-semibold text-slate-900">
+                  <FileSpreadsheet className="size-4 shrink-0 text-slate-500" aria-hidden />
+                  Tenho uma planilha
+                </span>
+                <span className="mt-1 block text-xs leading-relaxed text-slate-600">
+                  Envie o Excel com vários colaboradores e gere tudo em lote.
+                </span>
+              </NavLink>
+              <NavLink
+                to="/preencher"
+                className="group rounded-xl border border-slate-200 bg-white/80 px-5 py-4 text-left shadow-sm transition hover:border-slate-300 hover:bg-white"
+              >
+                <span className="flex items-center gap-2 text-sm font-semibold text-slate-900">
+                  <PenLine className="size-4 shrink-0 text-slate-500" aria-hidden />
+                  Vou digitar agora
+                </span>
+                <span className="mt-1 block text-xs leading-relaxed text-slate-600">
+                  Preencha um colaborador na tela, com a folha A4 ao lado.
+                </span>
+              </NavLink>
+            </div>
           </div>
         </div>
       </section>
@@ -108,9 +128,13 @@ export function GuiaDeUsoPage() {
             <div className="flex size-10 items-center justify-center rounded-lg bg-emerald-50 text-emerald-700">
               <FileSpreadsheet className="size-5" aria-hidden />
             </div>
-            <h3 className="mt-3 text-sm font-semibold text-slate-900">Você precisa de uma planilha</h3>
+            <h3 className="mt-3 text-sm font-semibold text-slate-900">A planilha é a via mais rápida</h3>
             <p className="mt-2 text-sm leading-relaxed text-slate-600">
-              O formato mais comum é <strong className="text-slate-800">Excel</strong> (arquivo .xlsx ou .xls). É nela que estarão os nomes e os itens entregues.
+              O formato mais comum é <strong className="text-slate-800">Excel</strong> (arquivo .xlsx ou .xls). É nela que estarão os nomes e os itens entregues. Se preferir não usar planilha, existe a{" "}
+              <NavLink to="/preencher" className="font-medium text-slate-800 underline underline-offset-2">
+                tela de preenchimento manual
+              </NavLink>
+              .
             </p>
           </div>
           <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
@@ -458,9 +482,27 @@ João Santos   | Motorista| 11/01/2026 | 1          | Colete refletivo`}
               Em teoria, sim, se o celular abrir o site e permitir escolher o arquivo. Na prática, para <strong>muitas pessoas e muitos PDFs</strong>, o celular pode ficar lento. Recomendamos usar um <strong>computador</strong> quando for gerar vários documentos de uma vez.
             </p>
           </FaqItem>
+          <FaqItem question="Preciso mesmo de uma planilha?">
+            <p>
+              Não. Na{" "}
+              <NavLink
+                to="/preencher"
+                className="font-semibold text-slate-800 underline underline-offset-2"
+              >
+                tela de preenchimento manual
+              </NavLink>{" "}
+              você digita os dados de <strong className="text-slate-800">um colaborador por vez</strong> e acompanha a folha A4 se preenchendo ao lado, em tempo real. O PDF sai
+              exatamente igual ao da planilha.
+            </p>
+            <p className="mt-2">
+              A diferença é o volume: a tela manual é melhor para uma pessoa de cada vez. Se você
+              tem muitos colaboradores para entregar no mesmo dia, a planilha continua sendo o
+              caminho mais rápido.
+            </p>
+          </FaqItem>
           <FaqItem question="O sistema guarda meus dados depois que eu fecho?">
             <p>
-              Não há um “cadastro” seu com a planilha guardada no site. Ao fechar a aba, o que estava na tela some — se precisar de novo, é só enviar o arquivo outra vez.
+              Não há um “cadastro” seu com a planilha guardada no site. Ao fechar a aba, o que estava na tela some — se precisar de novo, é só enviar o arquivo outra vez. Na tela manual vale o mesmo: os dados ficam só enquanto a aba estiver aberta.
             </p>
           </FaqItem>
         </div>

@@ -25,16 +25,21 @@ export function Header() {
           </div>
         </NavLink>
 
-        <nav className="flex flex-wrap items-center justify-end gap-1" aria-label="Principal">
+        <nav
+          className="flex min-w-0 items-center gap-1 overflow-x-auto sm:flex-wrap sm:justify-end sm:overflow-x-visible"
+          aria-label="Principal"
+        >
           <NavLink to="/" className={navClass} end>
             Home
           </NavLink>
           <NavLink to="/tool" className={navClass}>
-            Ferramenta
+            Planilha
+          </NavLink>
+          <NavLink to="/preencher" className={navClass}>
+            Manual
           </NavLink>
           <NavLink to="/sobre" className={navClass}>
-            <span className="sm:hidden">Sobre</span>
-            <span className="hidden sm:inline">Sobre</span>
+            Sobre
           </NavLink>
         </nav>
       </div>
